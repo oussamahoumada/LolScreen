@@ -1,0 +1,11 @@
+<div class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>choose the Version</mat-label>
+    <mat-select [(value)]="version" (valueChange)="doSomthing()">
+      <mat-option value="V1">V 7.18.1</mat-option>
+      <mat-option value="V2">V 7.17.2</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <app-champions-list [dataSource]='dataSource' ></app-champions-list>
+</div>
+
