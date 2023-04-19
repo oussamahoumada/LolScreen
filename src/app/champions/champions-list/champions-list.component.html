@@ -9,22 +9,29 @@
   <table mat-table matSort [dataSource]="dataSource" >
 
     <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> id </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <span class="tableHeader"><span class="lkatba">______</span> id </span>  </th>
+      <td mat-cell *matCellDef="let element">
+
+        <button mat-icon-button color="warn" class="deleteIcon">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+         {{element.id}}
+        </td>
     </ng-container>
 
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> name </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <samp class="tableHeader"> name </samp> </th>
       <td mat-cell *matCellDef="let element"> {{element.name}} </td>
     </ng-container>
 
     <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> title </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <samp class="tableHeader"> title </samp>  </th>
       <td mat-cell *matCellDef="let element"> {{element.title}} </td>
     </ng-container>
 
     <ng-container matColumnDef="key">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> key </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header > <samp class="tableHeader"> key </samp> </th>
       <td mat-cell *matCellDef="let element"> {{element.key}} </td>
     </ng-container>
 

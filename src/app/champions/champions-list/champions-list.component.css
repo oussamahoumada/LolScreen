@@ -4,4 +4,13 @@ table {
 
 .mat-mdc-table .mdc-data-table__header-row {
   background-color: #555c66;
+  text-align: center;
+}
+
+.tableHeader{
+  color: #dbc378;
+  font-size: larger;
+}
+.lkatba{
+  color: #555c66;
 }

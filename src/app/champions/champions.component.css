@@ -1,7 +1,9 @@
-h1 {
-  font-size: 32px;
+.header {
   text-align: center;
-  font-family: 'Playfair Display', serif !important;
+  margin: -5% 0;
+}
+img{
+  width: 20%;
 }
 .versionInput{
   float: right;
