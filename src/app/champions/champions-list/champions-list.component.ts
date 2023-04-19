@@ -37,7 +37,7 @@ export class ChampionsListComponent implements OnInit, OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['dataSource']&& changes['dataSource'].currentValue) {
+    if (changes['dataSource'] && changes['dataSource'].currentValue) {
       this.dataSource = changes['dataSource'].currentValue;
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;

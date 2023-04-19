@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ChampionsService } from '../../Services/champions.service';
 import { championsDataV1,championsDataV2 } from 'src/Model/championsData';
 import { MatTableDataSource } from '@angular/material/table';
@@ -8,6 +8,7 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './champions.component.html',
   styleUrls: ['./champions.component.css']
 })
+
 export class ChampionsComponent implements OnInit{
 
   public championsListV1: championsDataV1[] = [];
@@ -33,11 +34,18 @@ export class ChampionsComponent implements OnInit{
 
   ngOnInit() {
     this.championsService.eventEmitter.subscribe(eventData => {
-      this.championsService.deleteChampion(eventData, this.version);
+      if (this.version === "V1") {
+        this.championsListV1 = this.championsService.DeleteChampion(eventData, this.championsListV1);
+        this.dataSource = new MatTableDataSource<any>(this.championsListV1);
+      }
+      if (this.version === "V2") {
+        this.championsListV2 = this.championsService.DeleteChampion(eventData, this.championsListV2);
+        this.dataSource = new MatTableDataSource<any>(this.championsListV2);
+      }
     });
   }
 
-  doSomthing() {
+  switchVersion() {
     if (this.version === "V1") {
       this.dataSource = new MatTableDataSource<any>(this.championsListV1);
     }

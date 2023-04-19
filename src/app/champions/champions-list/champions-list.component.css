@@ -1,3 +1,7 @@
 table {
   width: 100%;
 }
+
+.mat-mdc-table .mdc-data-table__header-row {
+  background-color: #555c66;
+}
